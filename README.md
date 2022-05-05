@@ -1,0 +1,2 @@
+# ORIGINAL
+Func _PathSplit($sFilePath, ByRef $sDrive, ByRef $sDir, ByRef $sFileName, ByRef $sExtension)     Local $aArray = StringRegExp($sFilePath, "^\h*((?:\\\\\?\\)*(\\\\[^\?\/\\]+|[A-Za-z]:)?(.*[\/\\]\h*)?((?:[^\.\/\\]|(?(?=\.[^\/\\]*\.)\.))*)?([^\/\\]*))$", $STR_REGEXPARRAYMATCH)     If @error Then ; This error should never happen.         ReDim $aArray[5]         $aArray[$PATH_ORIGINAL] = $sFilePath     EndIf     if UBound ( $aArray) &lt; 5 Then ; ### my change         ReDim $aArray[5]         $aArray[$PATH_ORIGINAL] = $sFilePath     endif
